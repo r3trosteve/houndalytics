@@ -1,8 +1,8 @@
 == README
 
-As a user, I want to be able to see an index of customers (other web apps) that use the Blocmetrics Javascript library.
-As a user, I want to be able to use the Blocmetrics Javascript library to capture client-side events.
-As a user, I want to be able to see customer events that have been captured on the Blocmetrics web site.
+As a user, I want to be able to see an index of customers (other web apps) that use the Houndalytics Javascript library.
+As a user, I want to be able to use the Houndalytics Javascript library to capture client-side events.
+As a user, I want to be able to see customer events that have been captured on the Houndalytics web site.
 As a user, I want to be able to select a date range to see different views of data for a given customer.
 
 == Resources
