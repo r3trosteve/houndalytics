@@ -6,7 +6,7 @@ class LoginsController < ApplicationController
 	def create
 		# login here SOMEHOW
 		# redirect_to sites_path
-		render text: "yay"
+		redirect_to customers_path
 	end
 
 end
