@@ -4,9 +4,14 @@ class LoginsController < ApplicationController
 	end
 
 	def create
-		# login here SOMEHOW
-		# redirect_to sites_path
-		redirect_to customers_path
+		# check valid pw
+		# fields will be: params[:email] and params[:password]
+		user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
+
+		if user
+			session[:user_id] = user.id
+			redirect_to customers_path
+		end
 	end
 
 end

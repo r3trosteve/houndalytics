@@ -15,6 +15,11 @@ class CustomersController < ApplicationController
 
 	def index
 		@customers = Customer.all
+		if current_user
+			render :index
+		else
+			redirect_to root_url, notice: "ACCESS DENIED!!!111ONE"
+		end
 	end
 
 	private
