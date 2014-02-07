@@ -1,5 +1,7 @@
 Houndalytics::Application.routes.draw do
 
+  resources :events
+
   resource :login
   resources :customers
   get "sign_in" => "logins#new", as: "log_in"
