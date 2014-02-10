@@ -13,5 +13,7 @@ Then(/^I see an index of customers$/) do
 end
 
 Given(/^the customer has (\d+) events$/) do |count|
-	@customer.events.create!
+	count.to_i.times do
+		@customer.events.create!
+	end
 end
