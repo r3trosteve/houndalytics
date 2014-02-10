@@ -17,3 +17,15 @@ Given(/^the customer has (\d+) events$/) do |count|
 		@customer.events.create!
 	end
 end
+
+Given(/^the customer had (\d+) events yesterday$/) do |count|
+	count.to_i.times do
+		@customer.events.create! created_at: 1.day.ago, updated_at: 1.day.ago
+	end
+end
+
+Given(/^the customer has (\d+) events today$/) do |count|
+	count.to_i.times do
+		@customer.events.create!
+	end
+end

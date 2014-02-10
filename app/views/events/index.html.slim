@@ -1,3 +1,13 @@
+= form_tag customer_events_path(@customer), method: :get do
+  
+  = label_tag :start_date, "Start date"	
+  = date_field_tag :start_date
+
+  = label_tag :end_date, "End date"
+  = date_field_tag :end_date
+
+  = submit_tag "Show date range"
+
 ul
   = render @events
   / = render partial: "event", collection: @events
