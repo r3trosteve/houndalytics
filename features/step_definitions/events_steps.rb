@@ -12,3 +12,7 @@ When(/^I visit the events for yesterday$/) do
   fill_in "End date", with: Date.yesterday
   click_on "Show date range"
 end
+
+Then(/^the event is registered on Houndalytics$/) do
+  expect(@customer.events.count).to be(1)
+end
