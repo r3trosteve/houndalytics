@@ -10,19 +10,25 @@ rand(4..10).times do
   u.save
 
   # Create 6 Customers
-  customers = []
   6.times do
-    customers << Customer.create(
+    customer = Customer.create!(
       name: Faker::Company.name, 
     )
+
+    rand(5..12).times do
+      customer.sites.create!(
+          hostname: Faker::Internet.domain_name
+      )
+    end
+
+    rand(5..12).times do
+      customer.sites.sample.events.create!(
+        url: Faker::Internet.url,
+        created_at: Time.now - rand(600..31536000)
+      )
+    end
   end
 
-  rand(5..12).times do
-    e = customers.sample.events.create(
-      url: Faker::Internet.url,
-      created_at: Time.now - rand(600..31536000)
-    )
-  end
 end
 
 User.create!(

@@ -7,12 +7,12 @@ class EventsController < ApplicationController
 		# @event = @customer.events.find(params[:event_id])
 
 		if params[:start_date] && params[:end_date]
-			@events = @customer.events.where("date(created_at) >= ? AND date(created_at) <= ?", params[:start_date], params[:end_date] )
+			@events = @customer.events.where("date(events.created_at) >= ? AND date(events.created_at) <= ?", params[:start_date], params[:end_date] )
 		end
 	end
 
 	def create
-		@customer.events.create
+		SiteFinder.new(params[:event], request.referer, @customer).create
 
 		render json: {status: "OK"}
 	end

@@ -11,6 +11,9 @@ class LoginsController < ApplicationController
 		if user
 			session[:user_id] = user.id
 			redirect_to customers_path
+		else
+			flash[:error] = "Username not recognised"
+			render 'new'
 		end
 	end
 

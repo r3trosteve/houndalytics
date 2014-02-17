@@ -13,19 +13,22 @@ Then(/^I see an index of customers$/) do
 end
 
 Given(/^the customer has (\d+) events$/) do |count|
+	@site = @customer.sites.create!
 	count.to_i.times do
-		@customer.events.create!
+		@site.events.create!
 	end
 end
 
 Given(/^the customer had (\d+) events yesterday$/) do |count|
+	@site = @customer.sites.create!
 	count.to_i.times do
-		@customer.events.create! created_at: 1.day.ago, updated_at: 1.day.ago
+		@site.events.create! created_at: 1.day.ago, updated_at: 1.day.ago
 	end
 end
 
 Given(/^the customer has (\d+) events today$/) do |count|
+	@site = @customer.sites.create!
 	count.to_i.times do
-		@customer.events.create!
+		@site.events.create!
 	end
 end

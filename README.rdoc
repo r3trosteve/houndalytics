@@ -1,8 +1,6 @@
 == README
 
 
-As a user, I want to be able to select a date range to see different views of data for a given customer.
-As a user, I want to be able to use the Houndalytics Javascript library to capture client-side events.
 
 == Resources
 

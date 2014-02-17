@@ -5,6 +5,7 @@ Feature: Javascript snippet
 	Scenario:
 	  Given I am a user
 	  And I have customers
-	  When I embed the snippet on my website
+	  When I embed the snippet on "http://www.nutribu.com/health/api/v1.html"
 	  And an event occurs
 	  Then the event is registered on Houndalytics
+	  And the event is registered for "www.nutribu.com"
